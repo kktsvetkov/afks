@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<title>AHKETA</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+<style>
+<!--
+a {text-decoration: none; color:white}
+a:hover{text-decoration:underline}
+.t {font-family: Tahoma; font-size: 11px}
+.z {font-size: 12px;font-weight:bold}
+-->
+</style>
+</head>
+
+<body onload="nanovo();" topmargin="5" leftmargin="0">
+
+<form ACTION="/bin/script_library/form_handler_file" METHOD="POST" align="center"
+name="ank">
+  <input type="hidden" name="end_display"
+  value="http://members.tripod.com/linux_bg/enter.cgi"><input type="hidden" name="required"
+  value="tema,anketa"><input type="hidden" name="order" value="anketa"><input type="hidden"
+  name="tema" value="."><div align="center"><center><table cellspacing="0" cellpadding="0"
+  border="0" width="554" class="t">
+    <tr>
+      <td class="z" align="center" height="20">Коментар</td>
+    </tr>
+    <tr>
+      <td height="20"><table border="0" width="100%" cellspacing="0" cellpadding="0" class="t">
+        <tr>
+          <td width="100%"><img src="kvadrat.gif" width="19" height="9">Напишете
+          вашето мнение за статията.</td>
+          <td width="0%"><input type="button" value="[назад]" class="t"
+          style="background-color: white; border: none" onclick="javascript:history.back();"></td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td><table border="0" bgcolor="#000000" cellspacing="1" cellpadding="2">
+        <tr>
+          <td bgcolor="#FFFFFF"><textarea rows="15" name="anketa" cols="65"
+          style="border: medium none"></textarea></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CB0000"><table border="0" width="100%" cellspacing="0" cellpadding="0"
+          class="t">
+            <tr>
+              <td width="100%"><a href="javascript:nanovo();">[изчисти]</a></td>
+              <td width="0%"><a href="javascript:ank.submit();">[изпрати]</a></td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><br>
+      Изданието разчита на вашите коментари по
+      материалите, за да се следи интереса към тях, или<br>
+      да се корегира и обновява информацията. В края на
+      всеки месец коментарите по статиите се<br>
+      събират, преглеждат от редакторите, и се добавят
+      към оригиналния материал.</td>
+    </tr>
+  </table>
+  </center></div>
+</form>
+<script>
+var ank ;
+ank = document.forms['ank'];
+
+var s ;
+s = document.location.href ;
+
+s=s.substring(s.indexOf('?')+1,s.length);
+s=unescape(s);
+ank.tema.value=s;
+
+function nanovo()
+{ank.reset();
+ank.tema.value=s;
+ank.anketa.value=s+'\n';
+for(i=1;i<=s.length;i++){ank.anketa.value=ank.anketa.value+'-'};
+ank.anketa.value=ank.anketa.value+'\nKOMEHTAP:'}
+</script>
+
+</body>
+</html>
